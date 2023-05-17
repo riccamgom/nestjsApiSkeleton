@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env.local
+    container_name: exampleapi
+    image: example/api
+    volumes:
+      - ./api:/api
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    #command: ["npm", "run", "start:dev"]
+    networks:
+      - example-net
+  db:
+    image: mysql:5.7
+    container_name: exampledb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: example
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - example-net
+    depends_on:
+      - db
+
+networks:
+  example-net:
+    driver: bridge
+    external: true
