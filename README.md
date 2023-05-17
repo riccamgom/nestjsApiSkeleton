@@ -66,7 +66,7 @@ $ npm run test:cov
 
 ## Support
 
-SeniorCare Backend API.
+NestJs Skeleton API
 
 ## Stay in touch
 
