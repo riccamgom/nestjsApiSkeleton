@@ -17,7 +17,10 @@
 
 <p align="center">
 NestJs Flow
-  <a href="#" target="blank"><img src="./nest_flow.jpeg" width="200" alt="NestFlow" /></a>
+</p>
+
+<p align="center">
+  <a href="#" target="blank"><img src="./nest_flow.jpeg" alt="NestFlow" /></a>
 </p>
 
 ## Description
