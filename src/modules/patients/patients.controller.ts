@@ -11,7 +11,10 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { HttpStatus } from '@nestjs/common/enums';
-import { HttpException } from '@nestjs/common/exceptions';
+import {
+  HttpException,
+  InternalServerErrorException,
+} from '@nestjs/common/exceptions';
 import { ParseBoolPipe, ParseIntPipe } from '@nestjs/common/pipes';
 //Para usar variables de entorno de configuration.ts
 import { ConfigService } from '@nestjs/config';
@@ -79,5 +82,11 @@ export class PatientsController {
   filterPatients(@Query('dataFilter', ParseBoolPipe) filterVar: boolean) {
     console.log(filterVar);
     return [{ username: 'Test', email: 'test@test.com' }];
+  }
+
+  //Para lanzar un error provocado y capturarlo con el filter (Si no esta autenticado con JWT lanzara un 401)
+  @Get('/error')
+  throwError() {
+    throw new InternalServerErrorException();
   }
 }

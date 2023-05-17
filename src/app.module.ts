@@ -9,6 +9,8 @@ import { AuthModule } from './auth/auth.module';
 import configuration from 'src/common/config/configuration';
 //Middleware for all routes or defined routes and methods
 import { ExampleMiddleware } from 'src/middleware/example.middleware';
+//Filter to catch all the http exceptions
+import { httpExceptionFilter } from './filters/httpExceptionFilter.filter';
 //Modules of the app that contain the controllers and services
 import { PatientsModule } from './modules/patients/patients.module';
 import { DevicesModule } from './modules/devices/devices.module';
@@ -32,6 +34,10 @@ import { UsersModule } from './modules/users/users.module';
     {
       provide: APP_GUARD, //This applies the JwtAuthGuard to all the routes of the app
       useClass: JwtAuthGuard,
+    },
+    {
+      provide: 'APP_FILTER',
+      useClass: httpExceptionFilter,
     },
   ],
 })
