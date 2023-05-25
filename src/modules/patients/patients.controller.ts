@@ -84,7 +84,6 @@ export class PatientsController {
     return [{ username: 'Test', email: 'test@test.com' }];
   }
 
-  //Para lanzar un error provocado y capturarlo con el filter (Si no esta autenticado con JWT lanzara un 401)
   @Get('/error')
   throwError() {
     throw new InternalServerErrorException();
