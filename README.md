@@ -59,9 +59,9 @@ JWT_DATE_EXPIRATION_TIME = 60
 ## Running the app
 
 ```bash
-#To run SeniorCare de api local or in production
+#To run the api local or in production
 
-# development
+## development
 $ npm run start
 
 # watch mode
@@ -74,7 +74,7 @@ $ npm run start:prod
 ## Test
 
 ```bash
-#To run tests for SeniorCare API
+#To run tests for the API
 
 # unit tests
 $ npm run test
@@ -88,7 +88,7 @@ $ npm run test:cov
 
 ## Support
 
-SeniorCare Backend API.
+NestJs Skeleton API
 
 ## Stay in touch
 
