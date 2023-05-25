@@ -34,6 +34,28 @@ NestJs Flow
 $ npm install
 ```
 
+## Docker
+
+```bash
+# Create .env.local / .env.prod / .env.docker files
+#API DATA
+PORT=2222
+
+#DATABASE DATA
+DATABASE_HOST=exampledb
+DATABASE_PORT=3306
+DATABASE_USERNAME=test
+DATABASE_PASSWORD=test
+DATABASE_DATABASE=example
+DATABASE_SYNC=true
+
+#JWT DATA & TIME
+JWT_SECRET = example
+#Time in seconds
+JWT_ACCESS_EXPIRATION_TIME = 600s
+JWT_DATE_EXPIRATION_TIME = 60
+```
+
 ## Running the app
 
 ```bash

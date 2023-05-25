@@ -25,7 +25,7 @@ export class AuthService {
   async login(loginBody: any) {
     //Add expiration time to the response
     const expiresInSeconds = Number(
-      this.configService.get('jwtDatetimeExpiration'),
+      this.configService.get('jwtDateExpirationTime'),
     );
     const accessTokenExpiresAt = new Date(
       new Date().getTime() + expiresInSeconds * 1000,
