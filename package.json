@@ -1,8 +1,8 @@
 {
-  "name": "ccare-back",
+  "name": "NestJsSekeleton",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "NestJs Skeleton with comments",
+  "author": "Ricardo Campo",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
